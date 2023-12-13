@@ -1,5 +1,5 @@
 <template>
- <div class="card">
+ <div class="card mb-3">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <div>
