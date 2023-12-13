@@ -12,6 +12,7 @@
       <h3 class="text-center">No data to display</h3>
     </div>
     <div class="d-flex flex-column">
+      <Recieve v-if="selectedState == 'Recieve'" :data="displayData"/>
       <Payments v-if="selectedState == 'Payments'"  v-for="data in displayData" :data="data" />
     </div>
    </div>
@@ -34,7 +35,17 @@ const data = reactive({
       qty: 1,
       recieveQty: 1,
       recievedQty: 1,
-      notRecievedQty: 0
+      notRecievedQty: 0,
+      sku: 'ldf2g34j5gjlfd5j4gsdf'
+    },
+    {
+      POId: 'PO-13-PO',
+      product: 'nov-pro2',
+      qty: 1,
+      recieveQty: 1,
+      recievedQty: 1,
+      notRecievedQty: 0,
+      sku: 'ldf2g34jjlfd5j4gsdf'
     }
   ],
   Payments: [
@@ -52,7 +63,7 @@ const data = reactive({
       paymentId: "sdfsdfsdf",
       paidBy: 'vvvs',
       raisedBy: 'sah',
-      POId: 'PO-12-PO',
+      POId: 'PO-13-PO',
       recieptId: "dfdfs-dfdf",
       paymentDescription: 'Description',
       paymentDate: '2023-11-20',
