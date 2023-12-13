@@ -8,7 +8,12 @@
     </ul>
 
    <div class="mt-3">
-    <Payments v-if="selectedState == 'Payments'"  v-for="data in displayData" :data="data" />
+    <div v-if="!displayData.length">
+      <h3 class="text-center">No data to display</h3>
+    </div>
+    <div class="d-flex flex-column">
+      <Payments v-if="selectedState == 'Payments'"  v-for="data in displayData" :data="data" />
+    </div>
    </div>
   </div>
 </template>
@@ -33,6 +38,16 @@ const data = reactive({
     }
   ],
   Payments: [
+    {
+      paymentId: "sdfsdfsdf",
+      paidBy: 'vvvs',
+      raisedBy: 'sah',
+      POId: 'PO-12-PO',
+      recieptId: "dfdfs-dfdf",
+      paymentDescription: 'Description',
+      paymentDate: '2023-11-20',
+      paymentAmount: '100',
+    },
     {
       paymentId: "sdfsdfsdf",
       paidBy: 'vvvs',
